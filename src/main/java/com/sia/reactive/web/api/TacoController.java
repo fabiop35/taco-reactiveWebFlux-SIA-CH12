@@ -27,7 +27,8 @@ public class TacoController {
     @GetMapping(params = "recent")
     public Flux<Taco> recentTacos() {
         log.info("===recentTacos FLUX ===");
-        return Flux.fromIterable(tacoRepo.findAll()).take(12);
+     //return Flux.fromIterable(tacoRepo.findAll()).take(12);
+     return tacoRepo.findAll().take(12);
 
     }
 }
